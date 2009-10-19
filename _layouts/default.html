@@ -25,14 +25,18 @@
   <!-- #content: holds all except site footer - causes footer to stick to bottom -->
   <div id="content">
   <a href="http://github.com/scala-labs/scala-labs/">
-      <img style="position: absolute; top: 0; left: 0; border: 0;" 
+      <img style="position: absolute; top: 0; left: 0; border: 0; z-index:100000;" 
            src="http://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" 
            alt="Fork me on GitHub"/>
   </a>  
     <!-- #header: holds the logo and top links -->
     <div id="header" class="width">
   
-      <img src="images/logo.gif" alt="Your logo goes here"/>
+      <img src="images/logo.gif" alt="Your logo goes here"/>              <!--<a href="http://www.xebia.com/">
+          <img style="position: relative; top: 15px; left: -180px; border: 0; z-index:100000;" 
+               src="images/a-xebia-initiative-smaller.png" 
+               alt="A Xebia Initiative"/>
+      </a>-->
   
       <ul>
         <li><a href="index.html" {% if page.id == 'home' %}class="here"{% endif %}>Home</a></li>
@@ -121,13 +125,13 @@
   
   
   <!-- #footer: holds the site footer (logo and links) -->
-  <div id="footer">
-  
+  <div id="footer">  
     <!-- #bg: applies the site width and footer background -->
-    <div id="bg" class="width">
-  
-      <img src="images/logo.gif" alt="Your logo goes here"/>
-  
+    <div id="bg" class="width">        <a href="http://www.xebia.com/">
+          <img style="position: relative; top: 15px; left: 280px; border: 0; z-index:100000;" 
+               src="images/a-xebia-initiative-smaller.png" 
+               alt="A Xebia Initiative"/>
+      </a>  
       <ul>
         <li>        <!--
           <a href="http://www.opensourcetemplates.org/templates/preview/1111865659/"
