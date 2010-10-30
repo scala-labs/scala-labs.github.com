@@ -6,37 +6,101 @@ id: getting-started
 
 <p class="text-content">
 <h1>Getting Started</h1>
-<h2>Software Requirements</h2>You will need the following tools:
+
+<h2>Software Requirements</h2>
+
+You will need the following tools:
+
 <ul>
 	<p class="text-content">
-	<li>  	<h3>Git</h3>
+	<li>
+  	<h3>Git</h3>
   	The labs are on GitHub, so you will need Git to get to them. You can download Git <b><a href="http://git-scm.com/download">here</a></b>.<br>
-  	An excellent tutorial for git can be found <b><a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">here</a></b>.  	  	<p>  	To clone the scala-labs repo, use the following command:<br>
-  	<code>git clone git://github.com/scala-labs/scala-labs.git</code>  	</p>  </li>
+  	An excellent tutorial for git can be found <b><a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">here</a></b>.
+  	
+  	<p>
+  	To clone the scala-labs repo, use the following command:<br>
+  	<code>git clone git://github.com/scala-labs/scala-labs.git</code>
+  	</p>
+  </li>
 	</p>
 	
 	<p class="text-content">
-	<li>  	<h3>Simple Build Tool (SBT)</h3>
-  	The Scala-labs projects are built using SBT. Get it <b><a href="http://code.google.com/p/simple-build-tool/downloads">here</a></b>.<br>  	The build has been verified with SBT 0.7.3. Older versions might also work but have not ben tested.
+	<li>
+  	<h3>Build</h3>
+  	The Scala-labs projects can be built using Maven or Simple Build Tool (SBT). <br>
+<h4>Maven</h4>
+The labs (and Scala projects in general) are built exactly the same way as traditional java projects. <pre>mvn compile</pre>, <pre>mvn test</pre> etc. will just do fine.
+<h4>SBT</h4>
+Download SBT <b><a href="http://code.google.com/p/simple-build-tool/downloads">here</a></b>.<br>
+  	The build has been verified with SBT 0.7.4. Older versions might also work but have not ben tested.
         Follow <b><a href="http://code.google.com/p/simple-build-tool/wiki/Setup">these instructions</a></b> to install it.<br>
-        <b><a href="http://code.google.com/p/simple-build-tool/wiki/RunningSbt">On this page</b></a> you can find the most common build options.
+        <b><a href="http://code.google.com/p/simple-build-tool/wiki/RunningSbt">On this page</b></a> you can find the most common build options.<br/>
+Noteworthy: SBT uses for its dependency management the maven dependencies in the pom.xml. In case you use a custom location for your maven repository instead of the default one (~/.m2/repository), adjust the path in the SBT project config file: scala-labs/[solutions|labs]/project/build/ScalaLabsProject.scala accordingly.   
+
 	</li>
 	</p>
 	
 	<p class="text-content">
-	<li>  	<h3>A Java VM</h3>
-  	Scala compiles to JVM bytecode, so you will need a JVM to run any of the labs.   	Download it <b><a href="http://java.com/download/index.jsp">here</a></b>.<br> or use the one that comes built into your OS.  	We have tested on Java 5 and Java 6 without problems. Older versions are unlikely to work.	</li>
+	<li>
+  	<h3>A Java VM</h3>
+  	Scala compiles to JVM bytecode, so you will need a JVM to run any of the labs. 
+  	Download it <b><a href="http://java.com/download/index.jsp">here</a></b>.<br> or use the one that comes built into your OS.
+  	We have tested on Java 5 and Java 6 without problems. Older versions are unlikely to work.
+	</li>
 	</p>
 
 	<p class="text-content">
-	<li>  	<h3>Scala</h3>
-  	Since this <i>is</i> a Scala lab, you will need a basic Scala installation.   	To get one, go to the scala <b><a href="http://www.scala-lang.org/downloads">download</a></b> page and follow the
-  	directions for your platform.<br> <b>N.B.</b>The labs currently use version 2.8.0 RC1.	</li>
+	<li>
+  	<h3>Scala</h3>
+  	Since this <i>is</i> a Scala lab, you will need a basic Scala installation. 
+  	To get one, go to the scala <b><a href="http://www.scala-lang.org/downloads">download</a></b> page and follow the
+  	directions for your platform.<br> <b>N.B.</b>The labs currently use version 2.8.0 RC1.
+	</li>
 	</p>
 	
 	<p class="text-content">
-	<li>  	<h3>IDE Support</h3>
-  	There are scala plugins available for   	<b><a href="http://www.scala-lang.org/node/94">Eclipse</a></b>,   	<b><a href="http://plugins.intellij.net/plugin/?id=1347">IntelliJ</a></b> and 
-  	<b><a href="http://wiki.netbeans.org/Scala">Netbeans</a></b>,   	but be warned: the maturity of these plugins is not exactly on par with the Java support that you might be accustomed to.<br>  	  	<p>  	At our live Scala Labs sessions	we use the latest betas of the IntelliJ Idea Community Edition (IdeaIC) and nightly builds  	of the Scala plugin since they are the most feature complete at the moment.<br>   	</p>  	  	<p>  	The latest versions that we have tested and which work together well are Intellij Maia EAP version. The Maia versions can be downloaded <b><a href="http://confluence.jetbrains.net/display/IDEADEV/Maia+EAP">here</a></b>.  	You need to install the Scala plugin. This can be done using Intellij's plugin manager, go to <i>File -> Settings -> Plugins -> <tab available></i>, and check 'Scala'. After installing the plugin, Intellij has to be restarted.  	</p>  	  	<p>  	Of course, you can always use your favorite text editor and build with Maven.     Some of us even switched back to <b><a href="http://thegreylensmansview.blogspot.com/2009/03/stone-tools-and-scala-development-part.html">emacs</a></b>.	</li>	</p>	</ul><h2>The labs</h2><p class="text-content">  After getting the code with Git (see above), you will have two sbt projects called   <a href="http://github.com/scala-labs/scala-labs/tree/master/labs/">"labs"</a> and   <a href="http://github.com/scala-labs/scala-labs/tree/master/solutions/">"solutions"</a>.  The "labs" project has a lot of failing unit tests and your job is to fix them, starting with the super-simple  <a href="http://github.com/scala-labs/scala-labs/blob/master/labs/src/test/scala/org/scalalabs/basic/lab01/Exercise01Test.scala">first test in the first basic lab</a>,   which features our old friend "hello world". The "solutions" project contains our solutions in case you get stuck.</p><p class="text-content">  There is an IntelliJ Idea project included in the "labs" and "solutions" projects.   You might have to define a JDK in the project settings before the project will compile.</p>
+	<li>
+  	<h3>IDE Support</h3>
+  	There are scala plugins available for 
+  	<b><a href="http://www.scala-lang.org/node/94">Eclipse</a></b>, 
+  	<b><a href="http://plugins.intellij.net/plugin/?id=1347">IntelliJ</a></b> and 
+  	<b><a href="http://wiki.netbeans.org/Scala">Netbeans</a></b>, 
+  	but be warned: the maturity of these plugins is not exactly on par with the Java support that you might be accustomed to.<br>
+  	
+  	<p>
+  	At our live Scala Labs sessions	we use the latest betas of the IntelliJ Idea Community Edition (IdeaIC) and nightly builds
+  	of the Scala plugin since they are the most feature complete at the moment.<br> 
+  	</p>
+  	
+  	<p>
+  	The latest versions that we have tested and which work together well are Intellij Maia EAP version. The Maia versions can be downloaded <b><a href="http://confluence.jetbrains.net/display/IDEADEV/Maia+EAP">here</a></b>.
+  	You need to install the Scala plugin. This can be done using Intellij's plugin manager, go to <i>File -> Settings -> Plugins -> <tab available></i>, and check 'Scala'. After installing the plugin, Intellij has to be restarted.
+  	</p>
+  	
+  	<p>
+  	Of course, you can always use your favorite text editor and build with Maven. 
+    Some of us even switched back to <b><a href="http://thegreylensmansview.blogspot.com/2009/03/stone-tools-and-scala-development-part.html">emacs</a></b>.
+	</li>
+	</p>	
+</ul>
+
+
+<h2>The labs</h2>
+<p class="text-content">
+  After getting the code with Git (see above), you will have two sbt projects called 
+  <a href="http://github.com/scala-labs/scala-labs/tree/master/labs/">"labs"</a> and 
+  <a href="http://github.com/scala-labs/scala-labs/tree/master/solutions/">"solutions"</a>.
+  The "labs" project has a lot of failing unit tests and your job is to fix them, starting with the super-simple
+  <a href="http://github.com/scala-labs/scala-labs/blob/master/labs/src/test/scala/org/scalalabs/basic/lab01/Exercise01Test.scala">first test in the first basic lab</a>, 
+  which features our old friend "hello world". The "solutions" project contains our solutions in case you get stuck.
+</p>
+
+<p class="text-content">
+  There is an IntelliJ Idea project included in the "labs" and "solutions" projects. 
+  You might have to define a JDK in the project settings before the project will compile.
+</p>
+
+
 <h2>Problems ?</h2>
 If you encounter any problems, please join us at our <b><a href="http://groups.google.com/group/scala-labs">scala-labs google group</a></b>. Maybe we can help sort them out.
