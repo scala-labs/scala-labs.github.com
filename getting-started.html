@@ -1,9 +1,3 @@
----
-layout: default
-title: Getting Started
-id: getting-started
----
-
 <p class="text-content">
 <h1>Getting Started</h1>
 
@@ -29,15 +23,15 @@ You will need the following tools:
 	<li>
   	<h3>Build</h3>
   	The Scala-labs projects can be built using Maven or Simple Build Tool (SBT). 
-      <b>Maven</b></br>
+      <h4>Maven</h4>
       The labs (and Scala projects in general) are built exactly the same way as traditional java projects. mvn compile, mvn test etc. will just do fine.<br>
       
-      <b>SBT</b><br>
+      <h4>SBT</h4>
       Download SBT <b><a href="http://code.google.com/p/simple-build-tool/downloads">here</a></b>.<br>
   	The build has been verified with SBT 0.7.4. Older versions might also work but have not ben tested.
         Follow <b><a href="http://code.google.com/p/simple-build-tool/wiki/Setup">these instructions</a></b> to install it.<br>
-        <b><a href="http://code.google.com/p/simple-build-tool/wiki/RunningSbt">On this page</b></a> you can find the most common build options.<br>
-Noteworthy: SBT uses for its dependency management the maven dependencies in the pom.xml. In case you use a custom location for your maven repository instead of the default one (~/.m2/repository), adjust the path in the SBT project config file: scala-labs/(solutions|labs)/project/build/ScalaLabsProject.scala accordingly.   
+	<b><a href="http://code.google.com/p/simple-build-tool/wiki/RunningSbt">On this page</b></a> you can find the most common build options.<br><br>
+	Noteworthy: SBT uses for its dependency management the maven dependencies in the pom.xml. In case you use a custom location for your maven repository instead of the default one (~/.m2/repository), adjust the path in the SBT project config file: scala-labs/(solutions|labs)/project/build/ScalaLabsProject.scala accordingly.   
 
 	</li>
 	</p>
@@ -105,3 +99,4 @@ Noteworthy: SBT uses for its dependency management the maven dependencies in the
 
 <h2>Problems ?</h2>
 If you encounter any problems, please join us at our <b><a href="http://groups.google.com/group/scala-labs">scala-labs google group</a></b>. Maybe we can help sort them out.
+
