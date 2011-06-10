@@ -20,7 +20,7 @@ You will need the following tools:
   	
   		<p>
   			To clone the scala-labs repo, use the following command:<br>
-  			<code>git clone git://github.com/scala-labs/scala-labs.git</code>
+  			<code>git clone --recursive git://github.com/scala-labs/scala-labs.git</code>
   		</p>
     </li>
 	</p>
@@ -29,7 +29,7 @@ You will need the following tools:
 	<li>
   		<h3>Build</h3>
 		<p>
-		The Scala-labs projects can be built using Maven or Simple Build Tool (SBT). 
+		The Scala-labs projects can be built using Maven or Simple Build Tool (SBT). The preferable way is Maven.
     		</p>
 		<h4>Maven</h4>
 		<p>The labs (and Scala projects in general) are built exactly the same way as traditional java projects. mvn compile, mvn test etc. will just do fine.</p>
@@ -40,7 +40,7 @@ You will need the following tools:
   		The build has been verified with SBT 0.7.4. Older versions might also work but have not ben tested.
         Follow <b><a href="http://code.google.com/p/simple-build-tool/wiki/Setup">these instructions</a></b> to install it.<br>
 	<b><a href="http://code.google.com/p/simple-build-tool/wiki/RunningSbt">On this page</b></a> you can find the most common build options.<br><br>
-		Noteworthy: SBT uses for its dependency management the maven dependencies in the pom.xml. In case you use a custom location for your maven repository instead of the default one (~/.m2/repository), adjust the path in the SBT project config file: scala-labs/(solutions|labs)/project/build/ScalaLabsProject.scala accordingly.
+		Noteworthy: SBT uses for its dependency management the maven dependencies in the pom.xml. In case you use a custom location for your maven repository instead of the default one (~/.m2/repository), adjust the path in the SBT project config file: scala-labs/(solutions|labs)/project/build/ScalaLabsProject.scala accordingly. However, we advice to use maven.  
 		</p>
 		</li>
 	</p>
@@ -59,7 +59,7 @@ You will need the following tools:
   	<h3>Scala</h3>
   	Since this <i>is</i> a Scala lab, you will need a basic Scala installation. 
   	To get one, go to the scala <b><a href="http://www.scala-lang.org/downloads">download</a></b> page and follow the
-  	directions for your platform.<br> <b>N.B.</b>The labs use the final version of 2.8.0.
+  	directions for your platform.<br> <b>N.B.</b>The labs use the final version of 2.9.0.
 	</li>
 	</p>
 	
@@ -92,16 +92,17 @@ You will need the following tools:
 
 <h2>The labs</h2>
 <p class="text-content">
-  After getting the code with Git (see above), you will have two maven/sbt projects called 
+  After getting the code with Git (see above), you will have three maven/sbt projects called 
   <a href="http://github.com/scala-labs/scala-labs/tree/master/labs/">"labs"</a> and 
   <a href="http://github.com/scala-labs/scala-labs/tree/master/solutions/">"solutions"</a>.
+  <a href="http://github.com/scala-labs/scala-labs/tree/master/playground/">"playground"</a>.
   The "labs" project has a lot of failing unit tests and your job is to fix them, starting with the super-simple
   <a href="http://github.com/scala-labs/scala-labs/blob/master/labs/src/test/scala/org/scalalabs/basic/lab01/HelloWorldExerciseTest.scala">first test in the first basic lab</a>, 
   which features our old friend "hello world". The "solutions" project contains our solutions in case you get stuck.
-</p>
+In the "playground/akka" directory you will find the akka lab, which contains a "start" and "finish" folder. "start" contains the labs, "finish" the solutions. This project needs to be built with sbt. Read the readme for further instructions.</p>
 
 <p class="text-content">
-  There is an IntelliJ Idea project included in the "labs" and "solutions" projects. 
+  In order to import the project in your IDE use the maven import feature of your IDE. Import the maven project under "labs" and "solutions". 
   You might have to define a JDK in the project settings before the project will compile.
 </p>
 
